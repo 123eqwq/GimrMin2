@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GimrMin2.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GimrMin2">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Image Source="image1.png" />
+
+            <Label
+                FontSize="30"
+                HorizontalOptions="Center"
+                Text="Добро пожаловать!" />
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Entry
+                    x:Name="UsernameEntry"
+                    Keyboard="Text"
+                    Placeholder="Почта" />
+
+            </Border>
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Grid ColumnDefinitions="*, 30">
+
+                    <Entry
+                        x:Name="PasswordEntry"
+                        Keyboard="Text"
+                        Placeholder="Пароль" />
+                    <ImageButton
+                        x:Name="SvgImage"
+                        Grid.Column="1"
+                        Clicked="OnSvgImageTapped"
+                        HeightRequest="30"
+                        Source="visible.svg" />
+                </Grid>
+            </Border>
+
+            <Button
+                Clicked="GoToMenuPage"
+                FontAttributes="Bold"
+                Text="Войти"
+                TextTransform="Uppercase" />
+
+
+            <Grid ColumnDefinitions="*, auto, *" ColumnSpacing="10">
+
+                <BoxView Grid.Column="0" HeightRequest="1" />
+                <Label Grid.Column="1" Text="ИЛИ" />
+                <BoxView Grid.Column="2" HeightRequest="1" />
+            </Grid>
+
+
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label HorizontalOptions="Center" Text="Еще не с нами!" />
+
+                <Label
+                    HorizontalOptions="Center"
+                    Text="Зарегистроваться"
+                    TextColor="Blue"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToRegistrationPage" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GimrMin2.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title=" ">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            HorizontalOptions="Center"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <Image Source="image2.png" />
+
+            <Label
+                FontSize="30"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Cоздание нового аккаунта!" />
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+
+                <Entry Keyboard="Text" Placeholder="Почта" />
+            </Border>
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Entry
+                    x:Name="UsernameEntry"
+                    Keyboard="Text"
+                    Placeholder="Имя пользователя" />
+
+            </Border>
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Grid ColumnDefinitions="*, 30">
+
+                    <Entry
+                        x:Name="PasswordEntry"
+                        Keyboard="Text"
+                        Placeholder="Пароль" />
+                    <ImageButton
+                        x:Name="SvgImage"
+                        Grid.Column="1"
+                        Clicked="OnSvgImageTapped"
+                        HeightRequest="30"
+                        Source="visible.svg" />
+                </Grid>
+            </Border>
+
+            <Border
+                Padding="8"
+                Stroke="Black"
+                StrokeShape="RoundRectangle 10"
+                StrokeThickness="2">
+                <Entry
+                    x:Name="PasswordRepeatEntry"
+                    IsPassword="True"
+                    Keyboard="Text"
+                    Placeholder="Подтвердите пароль" />
+            </Border>
+
+            <Button Clicked="RegisterUser" Text="СОЗДАТЬ АККАУНТ" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
